@@ -107,7 +107,7 @@ remove-multiplatform-builder:
 # Docker needs to be configured to use containerd storage for images to be loaded into the local registry.
 .PHONY: build-multiplatform
 build-multiplatform:
-	# Because buildx bake does not support --env-file yet, we need to load it into the environment first.
+	# Because buildx bake does not support --env-file yet, we need to load it into the environment first..
 	set -a; . ./.env.override; set +a && docker buildx bake -f docker-compose.yml --load --set "*.platform=linux/amd64,linux/arm64"
 
 .PHONY: build-multiplatform-and-push
